@@ -1,0 +1,153 @@
+/* CreateProfile.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 2rem;
+    padding-bottom: 25px;
+}
+
+.field-container {
+    position: relative;
+    width: 100%;
+}
+
+.field-container input,
+.field-container select {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 2.5rem; /* Adjust padding to make space for the icon */
+    border: 1px solid rgb(134, 133, 133);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding-right: 0.5rem; /* Additional padding to the right to keep text away from edge */
+}
+
+
+.field-container .icon {
+    position: absolute;
+    top: 35%;
+    left: 0.5rem; /* Space from the left edge */
+    transform: translateY(-50%); /* Center the icon vertically */
+    font-size: 1.3rem;
+    color: rgb(91, 89, 89);
+    border-right: 1.3px solid black;
+    padding-right: 5px;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(231, 228, 228);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ccc;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.firstandlast,
+.genderanddob {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.field-subdiv {
+    width: 48%;
+}
+
+@media (max-width: 768px) {
+    .firstandlast,
+    .genderanddob {
+        flex-direction: column;
+    }
+
+    .field-subdiv {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-container {
+        width: 90%;
+        max-width: 100%;
+        padding: 1.5rem; /* Increase padding for better spacing */
+    }
+
+    .title {
+        font-size: 1.5rem; /* Slightly larger font size for readability */
+        text-align: center;
+    }
+
+    .field-container input,
+    .field-container select {
+        height: 35px; /* Increase input height */
+        padding: 0.6rem 0.5rem 0.6rem 2.5rem; /* Adjust padding to keep text away from the icon */
+    }
+
+    button {
+        height: 40px; /* Increase button height */
+        font-size: 14px; /* Increase font size */
+    }
+}
