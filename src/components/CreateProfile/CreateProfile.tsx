@@ -75,7 +75,7 @@ const CreateProfile: React.FC = () => {
             </div>
           </div>
 
-          <button type="submit">Submit</button>
+          <button type="submit" >Submit</button>
         </form>
       </div>
     </motion.div>

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
-import "./Registration.css";
-import { Link } from "react-router-dom";
+import styles from "./Registration.module.css"; // Import the CSS Module
+import { Link, useNavigate } from "react-router-dom";
 
 const Registration: React.FC = () => {
   const [email, setEmail] = useState<string>("");
@@ -11,6 +11,19 @@ const Registration: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [validationErrors, setValidationErrors] = useState<string[]>([]);
   const [success, setSuccess] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+  // Create refs for input fields
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const confirmPasswordRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    // Focus on the email input field when the component mounts
+    if (emailRef.current) {
+      emailRef.current.focus();
+    }
+  }, []);
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -50,8 +63,9 @@ const Registration: React.FC = () => {
 
     try {
       // Make the API request
-      const response = await axios.post("https://stest76.azurewebsites.net/api/Auth/register", payload);
+      const response = await axios.post("https://api-team4-auth-avdxa5htacfdg2gj.westeurope-01.azurewebsites.net/api/Auth/register", payload);
 
+      navigate("/home");
       // Handle successful registration
       setSuccess("Registration successful");
       console.log("Registration response:", response.data);
@@ -86,22 +100,23 @@ const Registration: React.FC = () => {
   };
 
   return (
-    <div className="background">
-      <div className="app">
-        <div className="left-container">
-          <div className="login-container">
+    <div className={styles.background}>
+      <div className={styles.app}>
+        <div className={styles.leftContainer}>
+          <div className={styles.loginContainer}>
             <h2>REGISTRATION</h2>
             <form onSubmit={handleSubmit}>
-              <div className="input-group">
+              <div className={styles.inputGroup}>
                 <input
                   type="email"
                   placeholder="Email"
                   required
                   value={email}
                   onChange={handleEmailChange}
+                  ref={emailRef} // Attach ref to email input
                 />
               </div>
-              <div className="input-group">
+              <div className={styles.inputGroup}>
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
@@ -109,18 +124,20 @@ const Registration: React.FC = () => {
                   value={password}
                   onChange={handlePasswordChange}
                   minLength={8}
+                  ref={passwordRef} // Attach ref to password input
                 />
               </div>
-              <div className="input-group">
+              <div className={styles.inputGroup}>
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Confirm Password"
                   required
                   value={confirmPassword}
                   onChange={handleConfirmPasswordChange}
+                  ref={confirmPasswordRef} // Attach ref to confirm password input
                 />
               </div>
-              <div className="show-password">
+              <div className={styles.showPassword}>
                 <input
                   type="checkbox"
                   id="show-password"
@@ -129,27 +146,27 @@ const Registration: React.FC = () => {
                 />
                 <label htmlFor="show-password">Show Password</label>
               </div>
-              {error && <div className="error-message">{error}</div>}
+              {error && <div className={styles.errorMessage}>{error}</div>}
               {validationErrors.length > 0 && (
-                <ul className="error-message">
+                <ul className={styles.errorMessage}>
                   {validationErrors.map((error, index) => (
                     <li key={index}>{error}</li>
                   ))}
                 </ul>
               )}
-              {success && <div className="success-message">{success}</div>}
-              <div className="login-button">
+              {success && <div className={styles.successMessage}>{success}</div>}
+              <div className={styles.loginButton}>
                 <button type="submit">REGISTER</button>
               </div>
-              <Link to="/" className="action">
+              <Link to="/" className={styles.action}>
                 Already have an account? Login here
               </Link>
             </form>
           </div>
         </div>
 
-        <div className="right-container">
-          <div className="quote-container">
+        <div className={styles.rightContainer}>
+          <div className={styles.quoteContainer}>
             <div>
               <h1>THE GOAL OF LIFE IS LIVING IN</h1>
             </div>

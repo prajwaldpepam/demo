@@ -1,4 +1,4 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
 * {
   box-sizing: border-box;
@@ -18,7 +18,6 @@ body {
   background-size: cover;
   display: flex;
   justify-content: center;
-  
   align-items: center;
   min-height: 100vh;
   padding: 20px;
@@ -30,13 +29,11 @@ body {
   justify-content: center;
   width: 100%;
   max-width: 1200px;
- 
   overflow: hidden;
   flex-wrap: wrap;
 }
 
-.left-container,
-.right-container {
+.leftContainer {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -45,7 +42,16 @@ body {
   min-width: 300px;
 }
 
-.login-container {
+.rightContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-width: 300px;
+}
+
+.loginContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,16 +64,16 @@ body {
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2), 0 -8px 8px rgba(0, 0, 0, 0.2), 8px 0 8px rgba(0, 0, 0, 0.2), -8px 0 8px rgba(0, 0, 0, 0.2);
 }
 
-.login-container h2 {
+.loginContainer h2 {
   margin-bottom: 20px;
 }
 
-.input-group {
+.inputGroup {
   margin-bottom: 15px;
   width: 100%;
 }
 
-.input-group input {
+.inputGroup input {
   width: 100%;
   padding: 10px;
   color: black;
@@ -75,21 +81,22 @@ body {
   border-radius: 5px;
   background: none;
   border: 1.4px solid black;
+  outline: none;
   backdrop-filter: blur(1.5px);
 }
 
-.input-group input:focus {
+.inputGroup input:focus {
+  border-color: #000000;
+  box-shadow: 0 0 0 0.5px #000000;
   outline: none;
-  border-color: black;
-  box-shadow: none;
 }
 
-.input-group input::placeholder {
+.inputGroup input::placeholder {
   color: rgb(46, 45, 45);
   font-weight: bold;
 }
 
-.login-button button {
+.loginButton button {
   width: 100%;
   padding: 10px;
   background-color: rgb(23, 28, 36);
@@ -100,11 +107,11 @@ body {
   cursor: pointer;
 }
 
-.login-button button:hover {
+.loginButton button:hover {
   background-color: #28285f;
 }
 
-.quote-container {
+.quoteContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -112,7 +119,7 @@ body {
   text-align: center;
 }
 
-.quote-container div h1 {
+.quoteContainer div h1 {
   margin: 7px 7px 7px 0;
   text-shadow: 1px 1px #ffffff;
   font-size: 1.5rem;
@@ -125,23 +132,23 @@ body {
   color: black;
 }
 
-.show-password {
+.showPassword {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
 }
 
-.show-password input {
+.showPassword input {
   margin-right: 10px;
   cursor: pointer;
 }
 
-.show-password label {
+.showPassword label {
   color: black;
   font-weight: bold;
 }
 
-.error-message {
+.errorMessage {
   color: red;
   margin-bottom: 15px;
   text-align: center;
@@ -153,45 +160,45 @@ body {
     flex-direction: column-reverse;
   }
 
-  .left-container,
-  .right-container {
+  .leftContainer,
+  .rightContainer {
     width: 100%;
     padding: 10px;
   }
 
-  .login-container {
-    /* max-width: 100%; */
+  .loginContainer {
+    max-width: 350px;
     padding: 10px;
   }
 
-  .quote-container div h1 {
+  .quoteContainer div h1 {
     font-size: 1.2rem;
   }
 
-  .login-button button {
+  .loginButton button {
     font-size: 14px;
   }
 
-  .input-group input {
+  .inputGroup input {
     padding: 8px;
     font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
-  .login-container {
+  .loginContainer {
     padding: 20px;
   }
 
-  .quote-container div h1 {
+  .quoteContainer div h1 {
     font-size: 1rem;
   }
 
-  .login-button button {
+  .loginButton button {
     font-size: 12px;
   }
 
-  .input-group input {
+  .inputGroup input {
     padding: 6px;
     font-size: 12px;
   }

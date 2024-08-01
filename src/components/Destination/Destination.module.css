@@ -1,0 +1,76 @@
+/* Destination.module.css */
+.homeContainer {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  flex-flow: row wrap;
+  justify-content:space-around;
+  padding: 20px 0;
+  row-gap: 22px;
+}
+
+.card {
+  width: 375px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.281);
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  object-fit: fill;
+}
+
+.cardContent {
+  padding: 15px;
+  text-align: center;
+}
+
+.cardTitle {
+  margin: 0;
+  color: #333;
+}
+
+.cardDescription {
+  color: #666;
+}
+
+.Toastify__toast-container {
+  z-index: 9999;
+}
+
+.searchBar {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.searchInput {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #3f3f3f;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: #000000;
+  box-shadow: 0 0 0 0.5px #000000;
+  outline: none;
+}
+
+@media screen and (min-width: 480px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+}
