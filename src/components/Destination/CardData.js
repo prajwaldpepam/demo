@@ -18,14 +18,14 @@ export const cardsData = [
       imageUrl: card2,
     },
     {
-      title: "Mumbai",
-      description: "City of Dreams",
-      imageUrl: card3,
-    },
-    {
       title: "Chennai",
       description: "Gateway to South India",
       imageUrl: card4,
+    },
+    {
+      title: "Mumbai",
+      description: "City of Dreams",
+      imageUrl: card3,
     },
     {
       title: "Delhi",

@@ -22,6 +22,9 @@ const Header: React.FC = () => {
   const handleViewProfile = () => {
     navigate("/viewprofile");
   }
+  const handleHomePage = () => {
+    navigate("/")
+  }
 
   const handleSignOut = () => {
     // Clear user data from local storage
@@ -83,7 +86,7 @@ const Header: React.FC = () => {
           </button>
         </div>
         <div className={styles.div}>
-          <NavLink to="" className={styles.active}>
+          <NavLink to="/home" className={styles.active}>
             Home
           </NavLink>
           <NavLink to="">Plan</NavLink>
